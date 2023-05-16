@@ -8,7 +8,7 @@
 	<title>Modal</title>
 </head>
 <body>
-	<header class="header">
+	<header id="header" class="header">
 		<div class="container">
 			<a href="#" class="header__logo">
 				<img src="/Logo.96fe08a9.svg" alt="logo" class="logo">
@@ -21,29 +21,26 @@
 			<div class="container">
 				<h2 class="section__title">Main components</h2>
 				<h3 class="section__subtitle">Modal</h3>
-				<div class="modal" tabindex="-1" role="dialog">
-					<div class="modal-dialog" role="document">
-					  <div class="modal-body">
+				<button data-modal-target="#modal" class="button modal-btn__link">Click here</button>
+				<div class="modal active" id="modal">
 						 <div class="modal-header">
 							<h5 class="modal-title">Modal title</h5>
-							<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-							  <span aria-hidden="true">&times;</span>
+							<button data-close-button="" class="modal-close">
+							  &times;
 							</button>
 						 </div>
 						 <div class="modal-content">
 							<p>Here is the content of modal, it can be anything. It is recommended to replace with a new component</p>
 						 </div>
 						 <div class="modal-footer">
-							<button type="button" class="modal-btn modal-btn--cancel" data-dismiss="modal">Cancel</button>
+							<button type="button" class="modal-btn modal-btn--cancel">Cancel</button>
 							<button type="button" class="modal-btn modal-btn--confirm">Confirm</button>
 						 </div>
-					  </div>
-					</div>
 				 </div>
 			</div>
 		</section>
+		<div class="active" id="overlay"></div>
 	</main>
-
 	<script src="/index.579125c3.js"></script>
 <script src="/Modal.3464ddca.js"></script></body>
 </html>

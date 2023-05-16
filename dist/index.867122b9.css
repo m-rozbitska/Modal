@@ -105,6 +105,19 @@ body {
   line-height: 36px;
 }
 
+.button {
+  color: #ffffffd9;
+  background: #907ff0;
+  border-radius: 4px;
+  padding: 8px 73px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.button:hover {
+  background: #ffffff1f;
+}
+
 @font-face {
   font-family: PingFang SC;
   src: url("PingFangSCRegular.e56618a0.woff2") format("woff2"), url("PingFangSCRegular.ebfb95c6.woff") format("woff");
@@ -114,27 +127,22 @@ body {
 }
 
 .modal {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.modal-dialog {
-  min-height: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 10px;
-  display: flex;
-}
-
-.modal-body {
+  z-index: 10;
   max-width: 480px;
+  background-color: #1a1a1a;
   border: 1px solid #ffffff1f;
   border-radius: 8px;
   gap: 4px;
   padding: 12px 12px 12px 16px;
+  transition: all .2s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)scale(0);
+}
+
+.modal.active {
+  transform: translate(-50%, -50%)scale(1);
 }
 
 .modal-header {
@@ -161,10 +169,9 @@ body {
 }
 
 .modal-footer {
+  justify-content: end;
   gap: 8px;
   display: flex;
-  position: relative;
-  left: 280px;
 }
 
 .modal-btn {
@@ -181,6 +188,21 @@ body {
 
 .modal-btn.modal-btn--confirm {
   background: #907ff0;
+}
+
+#overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease-in-out;
+  position: fixed;
+  inset: 0;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  background: #907ff0;
+  position: fixed;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */
