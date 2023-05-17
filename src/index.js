@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	modalContent.addEventListener('click', function(event) {
 		let target = event.target;
 
-		if (target == close || btnCancel) {
+		if (target == close || target == btnCancel) {
 			modal.style.display = "none";
 			document.body.style.overflow = "visible";
 		} else if (target == btnConfirm) {
