@@ -21,13 +21,61 @@
 			<div class="container">
 				<h2 class="section__title">Main components</h2>
 				<h3 class="section__subtitle">Modal</h3>
+				<button data-modal-target="#modal" class="button modal-btn__link">Click here</button>
+				<div class="modal" id="modal">
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button data-close-button="" class="modal-close">
+							&times;
+						</button>
+					</div>
+					<div class="modal-content">
+						<p>Here is the content of modal, it can be anything. It is recommended to replace with a new component
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button data-close-button="" type="button" class="modal-btn modal-btn--cancel">Cancel</button>
+						<button data-confirm-button="" type="button" class="modal-btn modal-btn--confirm">Confirm</button>
+					</div>
+				</div>
+			</div>
+		</section>
+			<div id="overlay"></div>
+	</main>
+	<script src="/index.579125c3.js"></script>
+<script src="/Modal.3464ddca.js"></script></body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/src/styles/styles.scss">
+	<title>Modal</title>
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<a href="#" class="header__logo">
+				<img src="./src/images/Logo.svg" alt="logo" class="logo">
+			</a>
+			<h1 class="header__title">Modal</h1>
+		</div>
+	</header>
+	<main>
+		<section class="section">
+			<div class="container">
+				<h2 class="section__title">Main components</h2>
+				<h3 class="section__subtitle">Modal</h3>
 				<button id="modalOpen" data-modal-target="#modal" class="button modal-btn__link">Click here</button>
 				<div id="modal" class="modal active">
 						<div class="modal-overlay">
 							<div class="modal-body">
 								<div class="modal-header">
 									<h5 class="modal-title">Modal title</h5>
-									<button data-close-button="" class="modal-close">
+									<button data-close-button class="modal-close">
 										<span class="close">&times;</span>
 									</button>
 								</div>
@@ -42,10 +90,10 @@
 						</div>
 					</div>
 				 </div>
-			
+			</div>
 		</section>
-		<!--<div class="active" id="overlay"></div>-->
+		<div class="active" id="overlay"></div>
 	</main>
-	<script src="/index.579125c3.js"></script>
-<script src="/Modal.3464ddca.js"></script></body>
-</html>
+	<script src="/src/index.js"></script>
+</body>
+</html> -->
