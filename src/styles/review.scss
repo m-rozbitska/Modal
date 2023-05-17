@@ -9,6 +9,11 @@ body {
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
+	padding: 0 20px;
+}
+
+main {
+	height: 800px;
 }
 
 .header {
@@ -18,7 +23,7 @@ body {
 
 .header__logo {
 	cursor: pointer;
-	}
+}
 
 .header__title {
 	padding-top: 40px;
