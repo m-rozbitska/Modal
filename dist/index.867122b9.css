@@ -142,12 +142,22 @@ main {
   background: #ffffff1f;
 }
 
+.form-check {
+  color: #000;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
 @font-face {
   font-family: PingFang SC;
   src: url("PingFangSCRegular.e56618a0.woff2") format("woff2"), url("PingFangSCRegular.ebfb95c6.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+.modal-body {
+  background: #907ff0;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */
