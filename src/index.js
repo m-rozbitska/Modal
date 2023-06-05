@@ -7,9 +7,9 @@ fetch('https://jsonplaceholder.typicode.com/users', {
     company: [ {
         name: "Deleted",
       }
-    ]
-    
+    ]  
   }),
+
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },
@@ -31,6 +31,5 @@ fetch('https://jsonplaceholder.typicode.com/users', {
       todoResults.innerHTML = `<p>Todo User Id: ${data.id}</p>`
       console.log(data.id)
     })
-
   })
 
