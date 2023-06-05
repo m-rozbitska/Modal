@@ -1,14 +1,11 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-    const forms = document.querySelectorAll(".needs-validation");
-    Array.from(forms).forEach(function(form) {
-        form.addEventListener("submit", function(event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-        }, false);
+function request() {
+    fetch("https://jsonplaceholder.typicode.com/users").then(function(response) {
+        return response.json();
+    }).then((response)=>{
+        console.log(response);
+        var username = document.getElementById("username");
+        username.innerHTML = "Username:" + response.username + "Id:" + response.id;
     });
-});
+}
 
 //# sourceMappingURL=index.579125c3.js.map
