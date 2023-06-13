@@ -567,7 +567,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                <div class="todos" data-user-id="${user.id}" style="margin-bottom: 15px;"></div>
             `);
         });
-        // });
         const userBtns = document.querySelectorAll("button[data-user-id]");
         userBtns.forEach((button)=>{
             button.addEventListener("click", function(event) {
@@ -584,38 +583,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             });
         });
     });
-}); // userBtns.forEach(btn => {
- //    btn.addEventListener('click', function(event) {
- //       event.preventDefault();
- //       const userId = event.target.dataset.userId;
- //       const todosWrapper = document.querySelector('.todos[data-user-id="${userId}"]');
- //       fetch('https://jsonplaceholder.typicode.com/users/${userId}/todos')
- //       .then(response => response.json())
- //       .then(todos => {
- //          todos.forEach(todo => {
- //             todosWrapper.insertAdjacentHTML('beforeend', `
- //             <div>ID: ${todo.id}; TITLE: ${todo.title}; COMPLETED: ${todo.completed}</div>
- //         `);
- //          })
- //       })
- //    })
- // })
- // userBtn.forEach(elem => {
- //    elem.addEventListener('click', function(event) {
- //       event.preventDefault();
- //       let userTodo =  elem.closest('.user__html-title').querySelector('#user__id').textContent;
- //       fetch('https://jsonplaceholder.typicode.com/users/1/todos')
- //          .then((response) => response.json())
- //          .then((isUser) => {
- //             if (isUser[userTodo].id != null) {
- //                   userBtn.closest('.user__html-title').querySelector('.user__info').innerHTML =
- //                      `<p>User id: ${isUser[userTodo].userId}</p>
- //                      ` } else {
- //                         return;
- //             }
- //          })
- //       })
- //    })
+});
 
 },{}]},["cCBoz","8lqZg"], "8lqZg", "parcelRequire94c2")
 

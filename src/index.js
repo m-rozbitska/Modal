@@ -22,19 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const userId = event.target.dataset.userId;
             const todosWrapper = document.querySelector(`.todos[data-user-id="${userId}"]`);
 
-            fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`)
+         fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`)
             .then(response => response.json())
             .then(todos => {
-                     if(todos != null) {
-                     todos.forEach(todo => {
-                        todosWrapper.insertAdjacentHTML('beforeend', `
-                        <div>ID: ${todo.id}; TITLE: ${todo.title}; COMPLETED: ${todo.completed}</div>`);
-                     })
-                        } else {
-                        return;
-                     }
-                  })
-               })
-            })
+               if(todos != null) {
+                  todos.forEach(todo => {
+                     todosWrapper.insertAdjacentHTML('beforeend', `
+                     <div>ID: ${todo.id}; TITLE: ${todo.title}; COMPLETED: ${todo.completed}</div>`);
+                  });
+               } else {
+                  return;
+               };
+            });
          });
-       });
+      });
+   });
+});
