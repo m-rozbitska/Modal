@@ -558,13 +558,23 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", ()=>{
+    debugger;
     fetch("https://jsonplaceholder.typicode.com/users").then((response)=>response.json()).then((isUser)=>{
-        const usersResult = document.querySelector("#usersResult");
+        const usersResult = document.querySelector("#tableUser");
         isUser.forEach((user)=>{
-            usersResult.insertAdjacentHTML("beforeend", `<div>ID: ${user.id}</div>  
-               <div>NAME: ${user.name}</div>
-               <div><button data-user-id="${user.id}">FETCH TODOS</button></div>
-               <div class="todos" data-user-id="${user.id}" style="margin-bottom: 15px;"></div>
+            usersResult.insertAdjacentHTML("beforeend", `
+               <table class="table__user">
+               <tr>
+                 <th>ID: ${user.id}</th>
+                 <th>NAME: ${user.name}</th>
+                 <th>USERNAME: ${user.username}</th>
+                 <th>EMAIL: ${user.email}</th>
+                 <th>ADDRESS: ${user.address.city}</th>
+                 <th>ACTIONS:
+               <div><button data-user-id="${user.id}" style="">FETCH TODOS</button></div>
+               <div class="todos" data-user-id="${user.id}" style="padding: 20px,"></div></th>
+               </tr> 
+             </table>
             `);
         });
         const userBtns = document.querySelectorAll("button[data-user-id]");

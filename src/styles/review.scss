@@ -66,6 +66,15 @@ main {
 	}
 }
 
+button {
+	padding: 8px 73px;
+	background: $btnConfirmBg;
+	color: $fontColor;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 22px;	
+}
+
 .request__btn {
 	margin: 40px 0px 0px 30px;
 	padding: 8px 73px;

@@ -129,6 +129,15 @@ main {
   }
 }
 
+button {
+  color: #ffffffd9;
+  background: #907ff0;
+  border-radius: 4px;
+  padding: 8px 73px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
 .request__btn {
   color: #ffffffd9;
   background: #907ff0;
