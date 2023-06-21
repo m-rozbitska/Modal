@@ -129,10 +129,11 @@ main {
   }
 }
 
-table {
+table, th, td, tr {
+  border-collapse: collapse;
   border: 1px solid #ffffffd9;
-  margin-top: 20px;
-  padding: 0 10px;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
 button {

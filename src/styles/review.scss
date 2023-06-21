@@ -66,12 +66,13 @@ main {
 	}
 }
 
-table {
-	margin-top: 20px;
-	padding: 0px 10px;
+table, th, td, tr {
+	margin-bottom: 20px;
+	padding: 5px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: $fontColor;
+	border-collapse: collapse;
 }
 
 button {
