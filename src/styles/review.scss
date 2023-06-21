@@ -66,13 +66,30 @@ main {
 	}
 }
 
+table {
+	margin-top: 20px;
+	padding: 0px 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: $fontColor;
+}
+
 button {
-	padding: 8px 73px;
+	padding: 8px 30px;
+	margin-top: 5px;
 	background: $btnConfirmBg;
 	color: $fontColor;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 22px;	
+}
+
+.btn__posts {
+	background: #333;
+}
+
+.btn__albums {
+	background: #575;
 }
 
 .request__btn {

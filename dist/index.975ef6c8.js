@@ -558,35 +558,53 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", ()=>{
-    debugger;
     fetch("https://jsonplaceholder.typicode.com/users").then((response)=>response.json()).then((isUser)=>{
+        const tableWrapper = document.querySelector("#tableWrapper");
+        tableWrapper.insertAdjacentHTML("beforeend", `
+            <table class="table__user" id="tableUser" width = "100%">
+               <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                  <th>USERNAME</th>
+                  <th>EMAIL</th>
+                  <th>ADDRESS</th>
+                  <th>ACTIONS</th>
+               </tr> 
+            </table>
+        
+         `);
         const usersResult = document.querySelector("#tableUser");
         isUser.forEach((user)=>{
             usersResult.insertAdjacentHTML("beforeend", `
-               <table class="table__user">
                <tr>
-                 <th>ID: ${user.id}</th>
-                 <th>NAME: ${user.name}</th>
-                 <th>USERNAME: ${user.username}</th>
-                 <th>EMAIL: ${user.email}</th>
-                 <th>ADDRESS: ${user.address.city}</th>
-                 <th>ACTIONS:
-               <div><button data-user-id="${user.id}" style="">FETCH TODOS</button></div>
-               <div class="todos" data-user-id="${user.id}" style="padding: 20px,"></div></th>
+                 <td>${user.id}</td>
+                 <td>${user.name}</td>
+                 <td>${user.username}</td>
+                 <td>${user.email}</td>
+                 <td>${user.address.city}</td>
+                 <td>
+                 <button class="todos" id = "todosBtn "data-user-id="${user.id}" style="padding: 20px,">TODOS</button>
+                 <button class = "btn__posts" data-user-id="${user.id}"  style="margin: 5px;">Posts</button>
+                              <button class = "btn__albums"  data-user-id="${user.id}"  style="margin 5px;">Albums</button>
+                 </td>
                </tr> 
-             </table>
             `);
         });
         const userBtns = document.querySelectorAll("button[data-user-id]");
         userBtns.forEach((button)=>{
             button.addEventListener("click", function(event) {
-                event.preventDefault();
                 const userId = event.target.dataset.userId;
                 const todosWrapper = document.querySelector(`.todos[data-user-id="${userId}"]`);
                 fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`).then((response)=>response.json()).then((todos)=>{
                     if (todos != null) todos.forEach((todo)=>{
                         todosWrapper.insertAdjacentHTML("beforeend", `
-                     <div>ID: ${todo.id}; TITLE: ${todo.title}; COMPLETED: ${todo.completed}</div>`);
+                        <tr>
+                           <td data-user-id="${todo.userId}">${todo.userId}</td>
+                           <td>ID:${todo.id}</td>
+                           <td>TITLE: ${todo.title}</td>
+                           <td>COMPLETED:${todo.completed}</td>
+                        </tr> 
+                     `);
                     });
                     else return;
                 });

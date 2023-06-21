@@ -129,13 +129,28 @@ main {
   }
 }
 
+table {
+  border: 1px solid #ffffffd9;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
 button {
   color: #ffffffd9;
   background: #907ff0;
   border-radius: 4px;
-  padding: 8px 73px;
-  font-size: 14px;
+  margin-top: 5px;
+  padding: 8px 30px;
+  font-size: 12px;
   line-height: 22px;
+}
+
+.btn__posts {
+  background: #333;
+}
+
+.btn__albums {
+  background: #575;
 }
 
 .request__btn {
