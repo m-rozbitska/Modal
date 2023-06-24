@@ -622,7 +622,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
     const postsWrapper = document.querySelector("#postsWrapper");
     postsWrapper.insertAdjacentHTML("beforeend", `
-      <table class="table__posts" id = "result2"" width = "100%">
+      <table class="table__posts" id = "result2" width = "100%">
          <tr>
             <th>ID</th>
             <th>NAME</th>
@@ -634,35 +634,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const postsResult = document.querySelectorAll("#postsBtn[data-post-id]");
     postsResult.forEach((btn)=>{
         btn.addEventListener("click", function(event) {
-            const postId = event.target.dataset.postId;
-            fetch("https://jsonplaceholder.typicode.com/posts/${postId}/comments").then((response)=>response.json()).then((isComments)=>{
-                isComments.forEach((post)=>{
+            const postId = event.target.dataset.userId;
+            fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`).then((response)=>response.json()).then((isComments)=>{
+                if (isComments != null) isComments.forEach((post)=>{
                     const resultSecond = document.querySelector("#result2");
                     resultSecond.insertAdjacentHTML("beforeend", `
-         <tr>
-            <td>${post.id}</td>
-            <td>${post.title}</td>
-            <td>${post.body}</td>
-         </tr> 
-      `);
+                     <tr>
+                        <td>${post.id}</td>
+                        <td>${post.name}</td>
+                        <td>${post.email}</td>
+                        <td>${post.body}</td>
+                     </tr> 
+                  `);
                 });
+                else return;
             });
         });
     });
-// const postsResult = document.querySelector('#commentsUser');
-// fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
-//    .then((response) => response.json())
-//    .then((isComments) => {
-//       isComments.forEach(post => {
-//          postsResult.insertAdjacentHTML('beforeend', `
-//          <tr>
-//             <td>${post.id}</td>
-//             <td>${post.title}</td>
-//             <td>${post.body}</td>
-//          </tr> 
-//       `);
-//    });     
-// });
 });
 
 },{}]},["cCBoz","8lqZg"], "8lqZg", "parcelRequire94c2")
