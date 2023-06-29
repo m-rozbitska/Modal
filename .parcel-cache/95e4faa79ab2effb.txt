@@ -18,7 +18,7 @@
 59C:\Users\Mariia\Modal\node_modules\dotenv-expand\index.d.ts133284532497334680 0
 61C:\Users\Mariia\Modal\node_modules\@parcel\markdown-ansi\test133284532506709758 1
 85C:\Users\Mariia\Modal\node_modules\@popperjs\core\lib\dom-utils\getParentNode.js.flow133304716978624819 0
-26C:\Users\Mariia\Modal\dist133325259155570877 1
+26C:\Users\Mariia\Modal\dist133325410440594440 1
 72C:\Users\Mariia\Modal\node_modules\@popperjs\core\lib\modifiers\arrow.js133304716980467134 0
 51C:\Users\Mariia\Modal\src\jquery\src\var\indexOf.js133304717023833836 0
 77C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-overflow.js133284532600371078 0
@@ -51,7 +51,7 @@
 56C:\Users\Mariia\Modal\node_modules\xxhash-wasm\README.md133284532521625098 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\findIndex.js133304717028271599 0
 68C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_table-variants.scss133304717020359709 0
-45C:\Users\Mariia\Modal\dist\index.867122b9.css133325259146680890 0
+45C:\Users\Mariia\Modal\dist\index.867122b9.css133325410428514466 0
 80C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-minlength.js133284532627189299 0
 31C:\Users\Mariia\Modal\src\fonts133284458261516061 1
 70C:\Users\Mariia\Modal\node_modules\jquery\src\core\stripAndCollapse.js133304716996756084 0
@@ -90,7 +90,7 @@
 73C:\Users\Mariia\Modal\node_modules\jquery\src\var\ObjectFunctionString.js133304716997932877 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\getWindow.js133304717030917749 0
 64C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_box-shadow.scss133304717019266336 0
-34C:\Users\Mariia\Modal\src\index.js133325259134829750 0
+34C:\Users\Mariia\Modal\src\index.js133325410421536023 0
 84C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-file-multiple.js133284532626949245 0
 72C:\Users\Mariia\Modal\src\@popperjs\core\dist\umd\popper-base.min.js.map133304717000094244 0
 72C:\Users\Mariia\Modal\node_modules\@parcel\transformer-sass\package.json133284532507345987 0
@@ -2531,11 +2531,11 @@
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IN.js133284532625865103 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IR.js133284532632994458 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IS.js133284532632994458 0
-44C:\Users\Mariia\Modal\dist\index.975ef6c8.js133325259146670883 0
+44C:\Users\Mariia\Modal\dist\index.975ef6c8.js133325410428534457 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\JM.js133284532633584499 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\JO.js133284532633644562 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KG.js133284532636121026 0
-37C:\Users\Mariia\Modal\dist\index.html133325257718802999 0
+37C:\Users\Mariia\Modal\dist\index.html133325410428164455 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KI.js133284532636342119 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KM.js133284532636654553 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KP.js133284532636810744 0
@@ -3786,10 +3786,10 @@
 63C:\Users\Mariia\Modal\node_modules\.bin\node-gyp-build-test.cmd133284532675467020 0
 50C:\Users\Mariia\Modal\node_modules\.bin\semver.ps1133284532675467020 0
 66C:\Users\Mariia\Modal\node_modules\.bin\update-browserslist-db.cmd133284532675623215 0
-49C:\Users\Mariia\Modal\dist\index.867122b9.css.map133325259147000911 0
-48C:\Users\Mariia\Modal\dist\index.975ef6c8.js.map133325259147000911 0
-44C:\Users\Mariia\Modal\dist\Logo.96fe08a9.svg133325046786696381 0
-59C:\Users\Mariia\Modal\dist\PingFangSCRegular.e56618a0.woff2133325259153580882 0
-58C:\Users\Mariia\Modal\dist\PingFangSCRegular.ebfb95c6.woff133325259155520880 0
+49C:\Users\Mariia\Modal\dist\index.867122b9.css.map133325410428644504 0
+48C:\Users\Mariia\Modal\dist\index.975ef6c8.js.map133325410429144478 0
+44C:\Users\Mariia\Modal\dist\Logo.96fe08a9.svg133325410426039256 0
+59C:\Users\Mariia\Modal\dist\PingFangSCRegular.e56618a0.woff2133325410436184471 0
+58C:\Users\Mariia\Modal\dist\PingFangSCRegular.ebfb95c6.woff133325410440554438 0
 35C:\Users\Mariia\Modal\css\fonts.css133286564673866154 0
 36C:\Users\Mariia\Modal\css\global.css133286564674021285 0
