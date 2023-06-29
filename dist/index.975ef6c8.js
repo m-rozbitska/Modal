@@ -559,54 +559,66 @@ function hmrAccept(bundle, id) {
 },{}],"8lqZg":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", ()=>{
     const tableWrapper = document.querySelector("#tableWrapper");
-    tableWrapper.insertAdjacentHTML("beforeend", ` 
-         <table class="table__user" id="tableUser" width = "100%"> 
-            <tr> 
-               <th>ID</th> 
-               <th>NAME</th> 
-               <th>USERNAME</th> 
-               <th>EMAIL</th> 
-               <th>ADDRESS</th> 
-               <th>ACTION</th> 
-            </tr>  
-         </table> 
-      `);
-    tableWrapper.insertAdjacentHTML("beforeend", ` 
-         <table class="todo" id = "user" width = "100%"> 
-            <tr> 
-               <th>userId</th> 
-               <th>ID</th> 
-               <th>TITLE</th> 
-               <th>COMPLETED</th> 
-            </tr>  
-         </table> 
-      `);
-    const usersResult = document.querySelector("#tableUser");
-    fetch("https://jsonplaceholder.typicode.com/users").then((response)=>response.json()).then((isUser)=>{
-        isUser.forEach((user)=>{
-            usersResult.insertAdjacentHTML("beforeend", ` 
-               <tr> 
-                  <td>${user.id}</td> 
-                  <td>${user.name}</td> 
-                  <td>${user.username}</td> 
-                  <td>${user.email}</td> 
-                  <td>${user.address.city}</td> 
-                  <td> 
-                     <button data-user-id="${user.id}" style="padding: 20px,">TODOS</button> 
-                     <button data-post-id="${user.id}" style="margin: 5px;">POSTS</button> 
-                     <button data-album-id="${user.id}" class = "albumsBtn" style="margin 5px;">ALBUMS</button> 
-                  </td> 
-               </tr>  
+    tableWrapper.insertAdjacentHTML("beforeend", `
+      <table id="userTable" width = "100%">
+         <tr>
+            <th colspan ="9">Users</th>
+         </tr>
+         <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>User name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company</th>
+            <th>Action</th>
+         </tr>
+      </table>
+   `);
+    const userTable = document.querySelector("#userTable");
+    fetch("https://jsonplaceholder.typicode.com/users").then((response)=>response.json()).then((users)=>{
+        users.forEach((user)=>{
+            userTable.insertAdjacentHTML("beforeend", `
+               <tr>
+                  <td>${user.id}</td>
+                  <td>${user.name}</td>
+                  <td>${user.username}</td>
+                  <td>${user.email}</td>
+                  <td>${user.address.city}</td>
+                  <td>${user.phone}</td>
+                  <td>${user.website}</td>
+                  <td>${user.company.name}</td>
+                  <td>
+                     <button data-user-id="${user.id}" id = "todo-btn"
+                     class = "todo-btn button" style="margin: 5px auto;">Todos</button>
+                     <button data-user-id="${user.id}" id = "post-btn" class = "post-btn button" style="margin: 5px auto;">Posts</button>
+                     <button data-user-id="${user.id}"  id = "album-btn" class = "album-btn button" style="margin: 5px auto;">Albums</button>
+                  </td>
+               </tr>
             `);
         });
+        tableWrapper.insertAdjacentHTML("beforeend", ` 
+         <table class="todo" id = "todoTable" width = "100%"> 
+            <tr>
+               <th colspan ="9">Result</th>
+            </tr>
+               <tr> 
+                  <th>userId</th> 
+                  <th>ID</th> 
+                  <th>TITLE</th> 
+                  <th>COMPLETED</th> 
+               </tr>  
+            </table>`);
         const userBtns = document.querySelectorAll("button[data-user-id]");
         userBtns.forEach((button)=>{
             button.addEventListener("click", function(event) {
+                let target = event.target;
                 const userId = event.target.dataset.userId;
-                console.log(`${userId}`);
                 fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`).then((response)=>response.json()).then((todos)=>{
-                    if (todos != null) todos.forEach((todo)=>{
-                        const resultFirst = document.querySelector("#user");
+                    if (target.classList.contains("todo-btn")) todos.forEach((todo)=>{
+                        let resultFirst = document.querySelector("#todoTable");
                         resultFirst.insertAdjacentHTML("beforeend", ` 
                            <tr> 
                               <td data-user-id="${todo.userId}">${todo.userId}</td> 
@@ -618,73 +630,346 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     });
                     else return;
                 });
-            });
-        });
-        const postsWrapper = document.querySelector("#postsWrapper");
-        postsWrapper.insertAdjacentHTML("beforeend", ` 
-         <table class="table__posts" id = "result1" width = "100%"> 
-            <tr> 
-               <th>ID</th> 
-               <th>NAME</th> 
-               <th>EMAIL</th> 
-               <th>BODY</th> 
-            </tr>  
-         </table> 
-      `);
-        const postsResult = document.querySelectorAll("button[data-post-id]");
-        postsResult.forEach((btn)=>{
-            btn.addEventListener("click", function(event) {
-                const postId = event.target.dataset.postId;
-                console.log(postId);
-                fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`).then((response)=>response.json()).then((isComments)=>{
-                    if (isComments != null) isComments.forEach((post)=>{
-                        const resultSecond = document.querySelector("#result1");
-                        resultSecond.insertAdjacentHTML("beforeend", ` 
-                        <tr> 
+                fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`).then((response)=>response.json()).then((comments)=>{
+                    if (target.classList.contains("post-btn")) comments.forEach((post)=>{
+                        let resultFirst = document.querySelector("#todoTable");
+                        resultFirst.insertAdjacentHTML("beforeend", `
+                           <tr> 
                            <td>${post.id}</td> 
                            <td>${post.name}</td> 
-                           <td>${post.email}</td> 
                            <td>${post.body}</td> 
+                           <td>
+                              <button data-post-id="${userId}" class = "button post-btn" style="margin: 5px auto;">Comments</button>
+                           </td>
                         </tr>  
-                     `);
+                           `);
+                    });
+                    else return;
+                });
+                fetch(`https://jsonplaceholder.typicode.com/albums/${userId}/photos`).then((response)=>response.json()).then((photos)=>{
+                    if (target.classList.contains("album-btn")) photos.forEach((photo)=>{
+                        let resultFirst = document.querySelector("#todoTable");
+                        resultFirst.insertAdjacentHTML("beforeend", ` 
+                           <tr> 
+                              <td>${photo.id}</td> 
+                              <td>${photo.title}</td> 
+                              <td>${photo.url}</td> 
+                              <td>${photo.thumbnailUrl}</td> 
+                              <td>
+                                 <button data-album-id="${userId}" class = "button" style="margin: 5px auto;">Photos</button>
+                           </td>
+                           </tr>  
+                        `);
                     });
                     else return;
                 });
             });
         });
-        const albumWrapper = document.querySelector("#albumWrapper");
-        albumWrapper.insertAdjacentHTML("beforeend", ` 
-         <table class="table__posts" id = "result2" width = "100%"> 
-            <tr> 
-               <th>ID</th> 
-               <th>TITLE</th> 
-               <th>URL</th> 
-               <th>THUMBNAILURL</th> 
-            </tr>  
-         </table> 
+        const resultWrapper = document.querySelector("#resultWrapper");
+        resultWrapper.insertAdjacentHTML("beforeend", `
+         <table id = "result2" width = "100%">
+            <tr>
+               <th colspan ="5">Result 2</th>
+            </tr>
+            <tr>
+               <th>Post id</th>
+               <th>Id</th>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Body</th>
+            </tr>
+         </table>
       `);
-        const albumsResult = document.querySelectorAll("button[data-album-id]");
-        albumsResult.forEach((btn)=>{
-            btn.addEventListener("click", function(event) {
-                const albumId = event.target.dataset.albumId;
-                fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`).then((response)=>response.json()).then((isAlbums)=>{
-                    if (isAlbums != null) isAlbums.forEach((photo)=>{
-                        const resultSecond = document.querySelector("#result2");
-                        resultSecond.insertAdjacentHTML("beforeend", ` 
-                        <tr> 
-                           <td>${photo.id}</td> 
-                           <td>${photo.title}</td> 
-                           <td>${photo.url}</td> 
-                           <td>${photo.thumbnailUrl}</td> 
-                        </tr>  
-                     `);
-                    });
-                    else return;
-                });
+        const btnComment = document.querySelectorAll("button[data-post-id]");
+        btnComment.forEach((comment)=>{
+            comment.addEventListener("click", function(event) {
+                let target = event.target;
+                const userId = event.target.dataset.userId;
+                fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`).then((response)=>response.json()).then(comment);
             });
         });
     });
-});
+}); // document.addEventListener("DOMContentLoaded", () => {
+ //    const tableWrapper = document.querySelector('#tableWrapper');
+ //    tableWrapper.insertAdjacentHTML('beforeend', `
+ //       <table id="tableUsers" width = "100%">
+ //          <tr>
+ //             <th colspan = "9">Users</th>
+ //          </tr>
+ //          <tr>
+ //             <th>Id</th>
+ //             <th>Name</th>
+ //             <th>User name</th>
+ //             <th>Email</th>
+ //             <th>Address</th>
+ //             <th>Phone</th>
+ //             <th>Website</th>
+ //             <th>Company</th>
+ //             <th>Action</th>
+ //          </tr>
+ //       </table>
+ //    `);
+ //    const tableUsers = document.querySelector('#tableUsers');
+ //    fetch('https://jsonplaceholder.typicode.com/users')
+ //    .then((response) => response.json())
+ //    .then((users) => {
+ //       users.forEach(user => {
+ //          tableUsers.insertAdjacentHTML('beforeend', `
+ //             <tr>
+ //                <td>${user.id}</td>
+ //                <td>${user.name}</td>
+ //                <td>${user.username}</td>
+ //                <td>${user.email}</td>
+ //                <td>${user.address.city}</td>
+ //                <td>${user.phone}</td>
+ //                <td>${user.website}</td>
+ //                <td>${user.company.name}</td>
+ //                <td>
+ //                   <button data-user-id="${user.id}" class = "btn-todos button button--danger" style="margin: 5px auto;">Todos</button>
+ //                   <button data-user-id="${user.id}" class = "btn-posts button button--info" style="margin: 5px auto;">Posts</button>
+ //                   <button data-user-id="${user.id}" class = "btn-albums button button--warning" style="margin: 5px auto;">Albums</button>
+ //                </td>
+ //             </tr>
+ //          `);
+ //       });
+ //       const buttonsUsers = document.querySelectorAll('button[data-user-id]');
+ //       buttonsUsers.forEach(buttonUser => {
+ //          buttonUser.addEventListener('click', function (event) {
+ //             let target = event.target;
+ //             const userId = target.dataset.userId;
+ //             if (document.querySelector('#result2')) {
+ //                document.querySelector('#result2').remove();
+ //             };
+ //             if (target.classList.contains('btn-todos')) {
+ //                if (!document.querySelector('#result1')) {
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "4" style="color: red;">Todos user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Completed</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                } else { 
+ //                   document.querySelector('#result1').remove();
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "4" style="color: red;">Todos user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Completed</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                };
+ //                let tableResult1 = document.querySelector('#result1');
+ //                fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`)
+ //                .then((response) => response.json())
+ //                .then((todos) => {
+ //                   todos.forEach(todo => {
+ //                      tableResult1.insertAdjacentHTML('beforeend', `
+ //                         <tr>
+ //                            <td>${todo.userId}</td>
+ //                            <td>${todo.id}</td>
+ //                            <td>${todo.title}</td>
+ //                            <td>${todo.completed}</td>
+ //                         </tr>
+ //                      `);
+ //                   });
+ //                });
+ //             };
+ //             if (target.classList.contains('btn-posts')) {
+ //                if (!document.querySelector('#result1')) {
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "5" style="color: red;">Posts user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Body</th>
+ //                            <th>Action</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                } else { 
+ //                   document.querySelector('#result1').remove();
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "5" style="color: red;">Posts user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Body</th>
+ //                            <th>Action</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                };
+ //                let tableResult1 = document.querySelector('#result1');
+ //                fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+ //                .then((response) => response.json())
+ //                .then((posts) => {
+ //                   posts.forEach(userPosts => {
+ //                      tableResult1.insertAdjacentHTML('beforeend', `
+ //                         <tr>
+ //                            <td>${userPosts.userId}</td>
+ //                            <td>${userPosts.id}</td>
+ //                            <td>${userPosts.title}</td>
+ //                            <td>${userPosts.body}</td>
+ //                            <td>
+ //                               <button data-posts-id="${userId}" class = "button button--info" style="margin: 5px auto;">Coments</button>
+ //                            </td>
+ //                         </tr>
+ //                      `);
+ //                   });
+ //                   const btnsComments = document.querySelectorAll('button[data-posts-id]');
+ //                   btnsComments.forEach(btnComment => {
+ //                      btnComment.addEventListener('click', function (event) {
+ //                         if (!document.querySelector('#result2')) {
+ //                            tableWrapper.insertAdjacentHTML('beforeend', `
+ //                               <table id = "result2">
+ //                                  <tr>
+ //                                     <th colspan = "5" style="color: red;">Comments user: ${userId}</th>
+ //                                  </tr>
+ //                                  <tr>
+ //                                     <th>Post id</th>
+ //                                     <th>Id</th>
+ //                                     <th>Name</th>
+ //                                     <th>Email</th>
+ //                                     <th>Body</th>
+ //                                  </tr>
+ //                               </table>
+ //                            `);
+ //                         } else { 
+ //                            return;
+ //                         };
+ //                         let tableResult2 = document.querySelector('#result2');
+ //                         fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
+ //                         .then((response) => response.json())
+ //                         .then((comments) => {
+ //                            comments.forEach(comment => {
+ //                               tableResult2.insertAdjacentHTML('beforeend', `
+ //                                  <tr>
+ //                                     <td>${comment.postId}</td>
+ //                                     <td>${comment.id}</td>
+ //                                     <td>${comment.name}</td>
+ //                                     <td>${comment.email}</td>
+ //                                     <td>${comment.body}</td>
+ //                                  </tr>
+ //                               `);
+ //                            });
+ //                         });
+ //                      });
+ //                   });
+ //                });
+ //             };
+ //             if (target.classList.contains('btn-albums')) {
+ //                if (!document.querySelector('#result1')) {
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "4" style="color: red;">Albums user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Action</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                } else { 
+ //                   document.querySelector('#result1').remove();
+ //                   tableWrapper.insertAdjacentHTML('beforeend', `
+ //                      <table id = "result1">
+ //                         <tr>
+ //                            <th colspan = "4" style="color: red;">Albums user: ${userId}</th>
+ //                         </tr>
+ //                         <tr>
+ //                            <th>User id</th>
+ //                            <th>Id</th>
+ //                            <th>Title</th>
+ //                            <th>Action</th>
+ //                         </tr>
+ //                      </table>
+ //                   `);
+ //                };
+ //                let tableResult1 = document.querySelector('#result1');
+ //                fetch(`https://jsonplaceholder.typicode.com/users/${userId}/albums`)
+ //                .then((response) => response.json())
+ //                .then((albums) => {
+ //                   albums.forEach(userAlbums => {
+ //                      tableResult1.insertAdjacentHTML('beforeend', `
+ //                         <tr>
+ //                            <td>${userAlbums.userId}</td>
+ //                            <td>${userAlbums.id}</td>
+ //                            <td>${userAlbums.title}</td>
+ //                            <td>
+ //                               <button data-albums-id="${userId}" class = "button button--warning" style="margin: 5px auto;">Photo</button>
+ //                            </td>
+ //                         </tr>
+ //                      `);
+ //                   });
+ //                   const btnsPhotos = document.querySelectorAll('button[data-albums-id]');
+ //                   btnsPhotos.forEach(btnPhoto => {
+ //                      btnPhoto.addEventListener('click', function (event) {
+ //                         if (!document.querySelector('#result2')) {
+ //                            tableWrapper.insertAdjacentHTML('beforeend', `
+ //                               <table id = "result2">
+ //                                  <tr>
+ //                                     <th colspan = "5" style="color: red;">Photo user : ${userId}</th>
+ //                                  </tr>
+ //                                  <tr>
+ //                                     <th>Album id</th>
+ //                                     <th>Id</th>
+ //                                     <th>Title</th>
+ //                                     <th>Url</th>
+ //                                     <th>ThumbnailUrl</th>
+ //                                  </tr>
+ //                               </table>
+ //                            `);
+ //                         } else { 
+ //                            return;
+ //                         };
+ //                         let tableResult2 = document.querySelector('#result2');
+ //                         fetch(`https://jsonplaceholder.typicode.com/albums/${userId}/photos`)
+ //                         .then((response) => response.json())
+ //                         .then((photos) => {
+ //                            photos.forEach(photo => {
+ //                               tableResult2.insertAdjacentHTML('beforeend', `
+ //                                  <tr>
+ //                                     <td>${photo.albumId}</td>
+ //                                     <td>${photo.id}</td>
+ //                                     <td>${photo.title}</td>
+ //                                     <td>${photo.url}</td>
+ //                                     <td>${photo.thumbnailUrl}</td>
+ //                                  </tr>
+ //                               `);
+ //                            });
+ //                         });
+ //                      });
+ //                   });
+ //                });
+ //             };
+ //          });
+ //       });
+ //    });
+ // });
 
 },{}]},["cCBoz","8lqZg"], "8lqZg", "parcelRequire94c2")
 
