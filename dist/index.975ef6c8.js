@@ -655,12 +655,49 @@ document.addEventListener("DOMContentLoaded", ()=>{
                               <td>${post.title}</td> 
                               <td>${post.body}</td> 
                               <td>
-                              <button data-post-id="${userId}" class = "button comment-btn" style="margin: 5px auto;">Comments</button>
+                              <button data-post-id="${userId}" class = "comment-btn button" style="margin: 5px auto;">Comments</button>
                               </td>
                         </tr>  
                            `);
                         });
                     } else return;
+                    const btnComment = document.querySelectorAll("button[data-post-id]");
+                    btnComment.forEach((comment)=>{
+                        comment.addEventListener("click", function(event) {
+                            let target = event.target;
+                            const userId = event.target.dataset.userId;
+                            fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`).then((response)=>response.json()).then((comments)=>{
+                                if (target.classList.contains("comment-btn")) {
+                                    tableWrapper.insertAdjacentHTML("beforeend", `
+                                       <table id = "result2" width = "100%">
+                                          <tr>
+                                             <th colspan ="5">Result 2</th>
+                                          </tr>
+                                          <tr>
+                                             <th>Post id</th>
+                                             <th>Id</th>
+                                             <th>Name</th>
+                                             <th>Email</th>
+                                             <th>Body</th>
+                                          </tr>
+                                       </table>
+                                    `);
+                                    comments.forEach((comment)=>{
+                                        let resultSecond = document.querySelector("#result2");
+                                        resultSecond.insertAdjacentHTML("beforeend", `
+                                          <tr> 
+                                             <td data-post-id="${comment.postId}">${comment.postId}</td> 
+                                             <td>${comment.id}</td> 
+                                             <td>${comment.name}</td> 
+                                             <td>${comment.email}</td> 
+                                             <td>${comment.body}</td> 
+                                          </tr>  
+                                          `);
+                                    });
+                                } else return;
+                            });
+                        });
+                    });
                 });
                 fetch(`https://jsonplaceholder.typicode.com/users/${userId}/albums`).then((response)=>response.json()).then((albums)=>{
                     if (target.classList.contains("album-btn")) {
@@ -690,42 +727,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                         `);
                         });
                     } else return;
-                });
-            });
-        });
-        const resultWrapper = document.querySelector("#resultWrapper");
-        resultWrapper.insertAdjacentHTML("beforeend", `
-         <table id = "result2" width = "100%">
-            <tr>
-               <th colspan ="5">Result 2</th>
-            </tr>
-            <tr>
-               <th>Post id</th>
-               <th>Id</th>
-               <th>Name</th>
-               <th>Email</th>
-               <th>Body</th>
-            </tr>
-         </table>
-      `);
-        const btnComment = document.querySelectorAll("button[data-post-id]");
-        btnComment.forEach((comment)=>{
-            comment.addEventListener("click", function(event) {
-                let target = event.target;
-                const userId = event.target.dataset.userId;
-                fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`).then((response)=>response.json()).then((comments)=>{
-                    if (target.classList.contains("comment-btn")) comments.forEach((comment)=>{
-                        let resultSecond = document.querySelector("#result2");
-                        resultSecond.insertAdjacentHTML("beforeend", `
-                           <tr> 
-                              <td data-post-id="${comment.userId}">${comment.userId}</td> 
-                              <td>${comment.id}</td> 
-                              <td>${comment.name}</td> 
-                              <td>${comment.email}</td> 
-                              <td>${comment.body}</td> 
-                           </tr>  
-                           `);
-                    });
                 });
             });
         });
