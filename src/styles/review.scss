@@ -38,9 +38,6 @@ main {
 	text-transform: capitalize;
 	}
 
-.section {
-	padding: 64px 0px;	
-}
 
 .section__title {
 	font-size: 32px;
@@ -113,6 +110,44 @@ button {
 	font-size: 12px;
 }
 
-.calculator__wrapper {
-	width: 300px;
+.section {
+	padding-top: 40px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
 }
+
+.calculator__wrapper {
+	width: 400px;
+}
+
+.calculator {
+	padding: 10px 10px 10px 10px;
+	max-width: 700px;
+	border-width: 1px;
+	border-color: $btnConfirmBg;
+	border-style: solid;
+	margin: 0 auto;
+ }
+
+ span {
+	font-size: 3rem;
+	background-color: #00bb00;
+	padding: 2px 12px;
+	margin-left: 16px;
+	margin-right: 16px;
+	border-radius: 4px;
+	color: #fff;
+ }
+
+ button {
+	font-size: 3rem;
+	cursor: pointer;
+	background-color :$btnConfirmBg;
+	border: 0px;
+ }
+
+ input {
+	border: 1px solid;
+	border-color: $btnConfirmBg;
+ }

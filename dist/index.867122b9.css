@@ -56,6 +56,15 @@ img {
   vertical-align: top;
 }
 
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz--appearance: textfield;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: 400;
@@ -99,10 +108,6 @@ main {
   padding-top: 40px;
   font-size: 60px;
   line-height: 80px;
-}
-
-.section {
-  padding: 64px 0;
 }
 
 .section__title {
@@ -172,6 +177,45 @@ button {
   color: #000;
   padding-top: 10px;
   font-size: 12px;
+}
+
+.section {
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  display: flex;
+}
+
+.calculator__wrapper {
+  width: 400px;
+}
+
+.calculator {
+  max-width: 700px;
+  border: 1px solid #907ff0;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+span {
+  color: #fff;
+  background-color: #0b0;
+  border-radius: 4px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 2px 12px;
+  font-size: 3rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: #907ff0;
+  border: 0;
+  font-size: 3rem;
+}
+
+input {
+  border: 1px solid #907ff0;
 }
 
 @font-face {
