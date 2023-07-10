@@ -18,7 +18,7 @@
 59C:\Users\Mariia\Modal\node_modules\dotenv-expand\index.d.ts133284532497334680 0
 61C:\Users\Mariia\Modal\node_modules\@parcel\markdown-ansi\test133284532506709758 1
 85C:\Users\Mariia\Modal\node_modules\@popperjs\core\lib\dom-utils\getParentNode.js.flow133304716978624819 0
-26C:\Users\Mariia\Modal\dist133332323873491537 1
+26C:\Users\Mariia\Modal\dist133334690607423453 1
 72C:\Users\Mariia\Modal\node_modules\@popperjs\core\lib\modifiers\arrow.js133304716980467134 0
 51C:\Users\Mariia\Modal\src\jquery\src\var\indexOf.js133304717023833836 0
 77C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-overflow.js133284532600371078 0
@@ -27,7 +27,7 @@
 57C:\Users\Mariia\Modal\node_modules\@parcel\codeframe\test133284532543107887 1
 78C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-when-else.js133284532604607424 0
 40C:\Users\Mariia\Modal\src\popper.js\dist133304717025471643 1
-32C:\Users\Mariia\Modal\index.html133332322797159906 0
+32C:\Users\Mariia\Modal\index.html133334684733116927 0
 70C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\alt-ww.js133284532543905785 0
 92C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-container-queries-style.js133284532591791180 0
 84C:\Users\Mariia\Modal\node_modules\@parcel\package-manager\src\NodePackageManager.js133284532542225142 0
@@ -51,7 +51,7 @@
 56C:\Users\Mariia\Modal\node_modules\xxhash-wasm\README.md133284532521625098 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\findIndex.js133304717028271599 0
 68C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_table-variants.scss133304717020359709 0
-45C:\Users\Mariia\Modal\dist\index.867122b9.css133332323873372311 0
+45C:\Users\Mariia\Modal\dist\index.867122b9.css133334690599673420 0
 80C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-minlength.js133284532627189299 0
 31C:\Users\Mariia\Modal\src\fonts133284458261516061 1
 70C:\Users\Mariia\Modal\node_modules\jquery\src\core\stripAndCollapse.js133304716996756084 0
@@ -90,7 +90,7 @@
 73C:\Users\Mariia\Modal\node_modules\jquery\src\var\ObjectFunctionString.js133304716997932877 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\getWindow.js133304717030917749 0
 64C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_box-shadow.scss133304717019266336 0
-34C:\Users\Mariia\Modal\src\index.js133332135332331818 0
+34C:\Users\Mariia\Modal\src\index.js133334690591460317 0
 84C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-file-multiple.js133284532626949245 0
 72C:\Users\Mariia\Modal\src\@popperjs\core\dist\umd\popper-base.min.js.map133304717000094244 0
 72C:\Users\Mariia\Modal\node_modules\@parcel\transformer-sass\package.json133284532507345987 0
@@ -150,7 +150,7 @@
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\SD.js133284532659848930 0
 80C:\Users\Mariia\Modal\src\@popperjs\core\lib\dom-utils\getHTMLElementScroll.d.ts133304717001294278 0
 70C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\forms.js133284532616538373 0
-44C:\Users\Mariia\Modal\src\styles\review.scss133332323866450373 0
+44C:\Users\Mariia\Modal\src\styles\review.scss133333117701120925 0
 54C:\Users\Mariia\Modal\node_modules\readdirp\index.d.ts133284532507502197 0
 53C:\Users\Mariia\Modal\node_modules\picocolors\LICENSE133284532484264880 0
 60C:\Users\Mariia\Modal\node_modules\bootstrap\scss\_maps.scss133304716991184104 0
@@ -2533,11 +2533,11 @@
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IN.js133284532625865103 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IR.js133284532632994458 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\IS.js133284532632994458 0
-44C:\Users\Mariia\Modal\dist\index.975ef6c8.js133332322830003871 0
+44C:\Users\Mariia\Modal\dist\index.975ef6c8.js133334690600073411 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\JM.js133284532633584499 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\JO.js133284532633644562 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KG.js133284532636121026 0
-37C:\Users\Mariia\Modal\dist\index.html133332322830003871 0
+37C:\Users\Mariia\Modal\dist\index.html133334690599673420 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KI.js133284532636342119 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KM.js133284532636654553 0
 66C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\KP.js133284532636810744 0
@@ -3788,12 +3788,12 @@
 63C:\Users\Mariia\Modal\node_modules\.bin\node-gyp-build-test.cmd133284532675467020 0
 50C:\Users\Mariia\Modal\node_modules\.bin\semver.ps1133284532675467020 0
 66C:\Users\Mariia\Modal\node_modules\.bin\update-browserslist-db.cmd133284532675623215 0
-49C:\Users\Mariia\Modal\dist\index.867122b9.css.map133332323873481586 0
+49C:\Users\Mariia\Modal\dist\index.867122b9.css.map133334690600273447 0
 57C:\Users\Mariia\Modal\dist\index.867122b9.css.map.7304.60133332136541205180 0
-48C:\Users\Mariia\Modal\dist\index.975ef6c8.js.map133332322832089861 0
-44C:\Users\Mariia\Modal\dist\Logo.96fe08a9.svg133332322829993939 0
-59C:\Users\Mariia\Modal\dist\PingFangSCRegular.e56618a0.woff2133332322839183070 0
+48C:\Users\Mariia\Modal\dist\index.975ef6c8.js.map133334690600283449 0
+44C:\Users\Mariia\Modal\dist\Logo.96fe08a9.svg133334690596413317 0
+59C:\Users\Mariia\Modal\dist\PingFangSCRegular.e56618a0.woff2133334690605093427 0
 65C:\Users\Mariia\Modal\dist\PingFangSCRegular.e56618a0.woff2.644.d133325416139966311 0
-58C:\Users\Mariia\Modal\dist\PingFangSCRegular.ebfb95c6.woff133332322839858520 0
+58C:\Users\Mariia\Modal\dist\PingFangSCRegular.ebfb95c6.woff133334690607003436 0
 35C:\Users\Mariia\Modal\css\fonts.css133286564673866154 0
 36C:\Users\Mariia\Modal\css\global.css133286564674021285 0

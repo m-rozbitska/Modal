@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="/src/styles/styles.scss" />
-    <title>JSONplaceholder</title>
+    <title>Calculator</title>
   </head>
   <body>
     <header id="header" class="header">
@@ -17,10 +17,12 @@
       </div>
     </header>
     <section class="section">
-      <form class="calculator" id="calculator">
-        <input type="number" id="number1" placeholder="0">
-        <br>
-        <input type="number" id="number2" placeholder="0">
+      <div class="calculator" id="calculator">
+
+          <input type="number" id="number1" placeholder="0" class="validateOne" pattern="^.[a-zA-Z0-9\]*$">
+          <br>
+          <input type="number" id="number2" placeholder="0" class="validateTwo">
+  
         <div class="button-container" id="button-container">
           <button class="add">+</button>
           <button class="substract">-</button>
@@ -28,7 +30,7 @@
           <button class="divide">/</button>
         </div>
         <table class="result" id="result"></table>
-      </form>
+      </div>
     </section>
     <script type = "module" src="/src/index.js"></script>
   </body>
