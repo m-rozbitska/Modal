@@ -72,15 +72,6 @@ table, th, td, tr {
 	border-collapse: collapse;
 }
 
-button {
-	padding: 8px 30px;
-	margin-top: 5px;
-	background: $btnConfirmBg;
-	color: $fontColor;
-	border-radius: 4px;
-	font-size: 12px;
-	line-height: 22px;	
-}
 
 .btn__posts {
 	background: #333;
@@ -122,32 +113,49 @@ button {
 }
 
 .calculator {
-	padding: 10px 10px 10px 10px;
-	max-width: 700px;
-	border-width: 1px;
-	border-color: $btnConfirmBg;
-	border-style: solid;
-	margin: 0 auto;
- }
+	background: $calculatorBg;
+	border-radius: 50px;
+	color: $calculatorFont;
+	height: 1218px;
+	padding: 20px;
+	position: relative;
+	width: 563px;
+}
 
- span {
-	font-size: 3rem;
-	background-color: #00bb00;
-	padding: 2px 12px;
-	margin-left: 16px;
-	margin-right: 16px;
-	border-radius: 4px;
-	color: #fff;
- }
+.buttons-container {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
 
- button {
-	font-size: 3rem;
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $btnBg;
+	color: $calculatorFont;
+	border-radius: 50%;
 	cursor: pointer;
-	background-color :$btnConfirmBg;
-	border: 0px;
- }
+	font-size: 45px;
+	width: 110px;
+	height: 110px;
+}
 
- input {
-	border: 1px solid;
-	border-color: $btnConfirmBg;
- }
+.orange-btn {
+	background: $btnOrange;
+}
+
+.large-btn {
+	display: block;
+	width: 243px;
+	border-radius: 60px;
+	grid-column: 1/3;
+}
+
+.gray-btn {
+	background: $btnGray;
+	color: $calculatorBg;
+}
+
+

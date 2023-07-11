@@ -141,16 +141,6 @@ table, th, td, tr {
   padding: 5px;
 }
 
-button {
-  color: #ffffffd9;
-  background: #907ff0;
-  border-radius: 4px;
-  margin-top: 5px;
-  padding: 8px 30px;
-  font-size: 12px;
-  line-height: 22px;
-}
-
 .btn__posts {
   background: #333;
 }
@@ -191,31 +181,49 @@ button {
 }
 
 .calculator {
-  max-width: 700px;
-  border: 1px solid #907ff0;
-  margin: 0 auto;
-  padding: 10px;
+  color: #fff;
+  height: 1218px;
+  width: 563px;
+  background: #000;
+  border-radius: 50px;
+  padding: 20px;
+  position: relative;
 }
 
-span {
-  color: #fff;
-  background-color: #0b0;
-  border-radius: 4px;
-  margin-left: 16px;
-  margin-right: 16px;
-  padding: 2px 12px;
-  font-size: 3rem;
+.buttons-container {
+  grid-gap: 20px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
 }
 
 button {
+  color: #fff;
   cursor: pointer;
-  background-color: #907ff0;
-  border: 0;
-  font-size: 3rem;
+  width: 110px;
+  height: 110px;
+  background: #333;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  display: flex;
 }
 
-input {
-  border: 1px solid #907ff0;
+.orange-btn {
+  background: #ff8c00;
+}
+
+.large-btn {
+  width: 243px;
+  border-radius: 60px;
+  grid-column: 1 / 3;
+  display: block;
+}
+
+.gray-btn {
+  color: #000;
+  background: #d3d3d3;
 }
 
 @font-face {
