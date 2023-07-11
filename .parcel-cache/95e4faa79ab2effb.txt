@@ -27,7 +27,7 @@
 57C:\Users\Mariia\Modal\node_modules\@parcel\codeframe\test133284532543107887 1
 78C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-when-else.js133284532604607424 0
 40C:\Users\Mariia\Modal\src\popper.js\dist133304717025471643 1
-32C:\Users\Mariia\Modal\index.html133334888665356177 0
+32C:\Users\Mariia\Modal\index.html133334915281639319 0
 70C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\regions\alt-ww.js133284532543905785 0
 92C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\css-container-queries-style.js133284532591791180 0
 84C:\Users\Mariia\Modal\node_modules\@parcel\package-manager\src\NodePackageManager.js133284532542225142 0
@@ -90,7 +90,7 @@
 73C:\Users\Mariia\Modal\node_modules\jquery\src\var\ObjectFunctionString.js133304716997932877 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\getWindow.js133304717030917749 0
 64C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_box-shadow.scss133304717019266336 0
-34C:\Users\Mariia\Modal\src\index.js133334891189795470 0
+34C:\Users\Mariia\Modal\src\index.js133334917116269613 0
 84C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-file-multiple.js133284532626949245 0
 72C:\Users\Mariia\Modal\src\@popperjs\core\dist\umd\popper-base.min.js.map133304717000094244 0
 72C:\Users\Mariia\Modal\node_modules\@parcel\transformer-sass\package.json133284532507345987 0
