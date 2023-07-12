@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   color: #ffffffd9;
   background: #1a1a1a;
-  font-family: PingFang SC;
+  font-family: Helvetica Neue, sans-serif;
   font-size: 14px;
   line-height: 22px;
 }
@@ -190,6 +190,20 @@ table, th, td, tr {
   position: relative;
 }
 
+.calculator-header {
+  height: 250px;
+  padding: 0 20px;
+}
+
+.value {
+  height: 158px;
+  text-align: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  font-size: 130px;
+  font-weight: 300;
+}
+
 .buttons-container {
   grid-gap: 20px;
   grid-template-rows: repeat(5, 1fr);
@@ -212,12 +226,14 @@ button {
 
 .orange-btn {
   background: #ff8c00;
+  font-weight: 600;
 }
 
 .large-btn {
   width: 243px;
   border-radius: 60px;
   grid-column: 1 / 3;
+  padding-right: 123px;
   display: block;
 }
 
@@ -227,8 +243,8 @@ button {
 }
 
 @font-face {
-  font-family: PingFang SC;
-  src: url("PingFangSCRegular.e56618a0.woff2") format("woff2"), url("PingFangSCRegular.ebfb95c6.woff") format("woff");
+  font-family: Helvetica Neue;
+  src: url("HelveticaNeue.ba8ba146.woff2") format("woff2"), url("HelveticaNeue.77085009.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
