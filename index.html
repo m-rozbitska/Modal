@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <link rel="stylesheet" href="/src/styles/styles.scss" />
+    <link rel="stylesheet" href="./src/styles/styles.scss"/>
     <title>Calculator</title>
   </head>
   <body>
@@ -20,29 +20,85 @@
       <section class="section">
         <div class="container">
           <div class="calculator">
-            <div class="calculator-header">
+            <div class="calculator-top"></div>
+            <div class="screen" id="screen">
+                0
             </div>
-            <div class="value">0</div>
-            <div class="buttons-container">
-              <button class="ac gray-btn">AC</button>
-              <button class="pm gray-btn">+/-</button>
-              <button class="percent gray-btn">%</button>
-              <button class="divide orange-btn">÷</button>
-              <button class="number-7">7</button>
-              <button class="number-8">8</button>
-              <button class="number-9">9</button>
-              <button class="multiple orange-btn">×</button>
-              <button class="number-4">4</button>
-              <button class="number-5">5</button>
-              <button class="number-6">6</button>
-              <button class="substract orange-btn">—</button>
-              <button class="number-1">1</button>
-              <button class="number-2">2</button>
-              <button class="number-3">3</button>
-              <button class="add orange-btn">+</button>
-              <button class="number-0 large-btn">0</button>
-              <button class="comma">,</button>
-              <button class="equal orange-btn">=</button>
+            <div class="keyboard" id="keyboard">
+              <button class="btn special" data-button-type="operator" data-value="clear" id="clear_button">AC</button>
+              <button class="btn special" data-button-type="operator" data-value="+/-">+/-</button>
+              <button class="btn special" data-button-type="operator" data-value="%">%</button>
+              <button class="btn operation" data-button-type="operator" data-value="/">÷</button>
+              <button class="btn operator" data-button-type="digit" data-value="7">7</button>
+              <button class="btn operator" data-button-type="digit" data-value="8">8</button>
+              <button class="btn operator" data-button-type="digit" data-value="9">9</button>
+              <button class="btn operation" data-button-type="operator" data-value="*">x</button>
+              <button class="btn operator" data-button-type="digit" data-value="4">4</button>
+              <button class="btn operator" data-button-type="digit" data-value="5">5</button>
+              <button class="btn operator" data-button-type="digit" data-value="6">6</button>
+              <button class="btn operation" data-button-type="operator" data-value="-">-</button>
+              <button class="btn operator" data-button-type="digit" data-value="1">1</button>
+              <button class="btn operator" data-button-type="digit" data-value="2">2</button>
+              <button class="btn operator" data-button-type="digit" data-value="3">3</button>
+              <button class="btn operation" data-button-type="operator" data-value="+">+</button>
+              <button class="btn zero" data-button-type="digit" data-value="0">0</button>
+              <button class="btn operator" data-button-type="digit" data-value=".">.</button>
+              <button class="btn operation" data-button-type="operator" data-value="=">=</button>
+            </div>
+        </div>
+        </div>
+      </section>
+    </main>
+    <script type = "module" src="/src/index.js"></script>
+  </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="/src/styles/styles.scss" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <a href="#" class="header__logo">
+          <img src="./src/images/Logo.svg" alt="logo" class="logo" />
+        </a>
+        <h1 class="header__title">iPhone calculator</h1>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section">
+        <div class="container">
+          <div class="calculator" id="calculator">
+            <div class="calculator-header"></div>
+            <div id="value" class="value">0</div>
+            <div id="buttonsContainer" class="buttons-container">
+              <button data-button-type="operator" data-value="clear" id="clearBtn" class="clear special">AC</button>
+              <button data-button-type="operator" data-value="+/" id="btn" class="pm special">+/-</button>
+              <button data-button-type="operator" data-value="%" id="btn" class="percent special">%</button>
+              <button data-button-type="operator" data-value="/"  id="btn" class="divide operator">÷</button>
+              <button data-button-type="number" data-value="7" id="btn" class="number-7">7</button>
+              <button data-button-type="number" data-value="8" id="btn" class="number-8">8</button>
+              <button data-button-type="number" data-value="9" id="btn" class="number-9">9</button>
+              <button data-button-type="operator" data-value="*" id="btn" class="multiple operator">×</button>
+              <button data-button-type="number" data-value="4" id="btn" class="number-4">4</button>
+              <button data-button-type="number" data-value="5" id="btn" class="number-5">5</button>
+              <button data-button-type="number" data-value="6" id="btn" class="number-6">6</button>
+              <button data-button-type="operator" data-value="-" id="btn" class="substract operator">—</button>
+              <button data-button-type="number" data-value="1" id="btn" class="number-1">1</button>
+              <button data-button-type="number" data-value="2" id="btn" class="number-2">2</button>
+              <button data-button-type="number" data-value="3" id="btn" class="number-3">3</button>
+              <button data-button-type="operator" data-value="+" id="btn" class="add operator">+</button>
+              <button data-button-type="number" data-value="0" id="btn" class="number-0 large-btn">0</button>
+              <button data-button-type="number" data-value="." id="btn" class="comma">,</button>
+              <button data-button-type="operator" data-value="=" id="btn" class="equal operator">=</button>
             </div>
           </div>
         </div>
@@ -50,4 +106,4 @@
     </main>
     <script type = "module" src="/src/index.js"></script>
   </body>
-</html>
+</html> -->

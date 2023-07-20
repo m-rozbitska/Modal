@@ -169,17 +169,6 @@ table, th, td, tr {
   font-size: 12px;
 }
 
-.section {
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
-  display: flex;
-}
-
-.calculator__wrapper {
-  width: 400px;
-}
-
 .calculator {
   color: #fff;
   height: 1218px;
@@ -190,12 +179,14 @@ table, th, td, tr {
   position: relative;
 }
 
-.calculator-header {
-  height: 250px;
-  padding: 0 20px;
+.section {
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  display: flex;
 }
 
-.value {
+.screen {
   height: 158px;
   text-align: right;
   margin-bottom: 20px;
@@ -204,14 +195,19 @@ table, th, td, tr {
   font-weight: 300;
 }
 
-.buttons-container {
+.calculator-top {
+  height: 250px;
+  padding: 0 20px;
+}
+
+.keyboard {
   grid-gap: 20px;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
   display: grid;
 }
 
-button {
+.btn {
   color: #fff;
   cursor: pointer;
   width: 110px;
@@ -224,22 +220,22 @@ button {
   display: flex;
 }
 
-.orange-btn {
+.special {
+  color: #000;
+  background: #d3d3d3;
+}
+
+.operation {
   background: #ff8c00;
   font-weight: 600;
 }
 
-.large-btn {
+.zero {
   width: 243px;
   border-radius: 60px;
   grid-column: 1 / 3;
   padding-right: 123px;
   display: block;
-}
-
-.gray-btn {
-  color: #000;
-  background: #d3d3d3;
 }
 
 @font-face {
