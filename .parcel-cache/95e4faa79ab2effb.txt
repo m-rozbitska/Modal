@@ -87,7 +87,7 @@
 73C:\Users\Mariia\Modal\node_modules\jquery\src\var\ObjectFunctionString.js133304716997932877 0
 58C:\Users\Mariia\Modal\src\popper.js\src\utils\getWindow.js133304717030917749 0
 64C:\Users\Mariia\Modal\src\bootstrap\scss\mixins\_box-shadow.scss133304717019266336 0
-34C:\Users\Mariia\Modal\src\index.js133351358764702251 0
+34C:\Users\Mariia\Modal\src\index.js133351365369849935 0
 84C:\Users\Mariia\Modal\node_modules\caniuse-lite\data\features\input-file-multiple.js133284532626949245 0
 72C:\Users\Mariia\Modal\src\@popperjs\core\dist\umd\popper-base.min.js.map133304717000094244 0
 72C:\Users\Mariia\Modal\node_modules\@parcel\transformer-sass\package.json133284532507345987 0

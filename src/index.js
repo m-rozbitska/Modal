@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector('#calc_form')
+  const form = document.querySelector('#calc_form');
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       screen.style.fontSize = "3rem";
     } else if(inputS.length >= 10 ){
       display.style.fontSize = "2.6rem";
-    }
-  }
+    };
+  };
   
 
   let equation = [];
@@ -54,25 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           is_operator = true;
           break;
-      }
+      };
     });
-});
-
-let is_operator = false;
-operand_btns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (screen.value == "0") {
-      screen.value = e.target.value;
-    } else if (is_operator) {
-      is_operator = false;
-      screen.value = e.target.value;
-    } else if (screen.value.includes(".")) {
-      screen.value = screen.value + "" + e.target.value.replace(".", "");
-    } else {
-      screen.value = screen.value + "" + e.target.value;
-    }
   });
-});
+
+  let is_operator = false;
+  operand_btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (screen.value == "0") {
+        screen.value = e.target.value;
+      } else if (is_operator) {
+        is_operator = false;
+        screen.value = e.target.value;
+      } else if (screen.value.includes(".")) {
+        screen.value = screen.value + "" + e.target.value.replace(".", "");
+      } else {
+        screen.value = screen.value + "" + e.target.value;
+      };
+    });
+  });
 
   const remove_active = () => {
     operator_btns.forEach((btn) => {
