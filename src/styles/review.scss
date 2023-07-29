@@ -1,207 +1,108 @@
 body {
-	font-family: "Helvetica Neue", sans-serif;
-	background: $bgBody;
-	font-size: 14px;
-	line-height: 22px;
-	color: $fontColor;
-}
-
-.container {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-
-@media (max-width: 765px) {
-	.container {
-		max-width: none;
-	}
-}
-
-main {
-	height: 800px;
-}
-
-.header {
-	padding: 48px 0px;
-	background: $headerBg;
-}
-
-.header__logo {
+	background-color: #333333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+ }
+ 
+ body,
+ html {
+	height: 100vh;
+	font-family: sans-serif;
+ }
+ 
+ button {
 	cursor: pointer;
-}
-
-.header__title {
-	padding-top: 40px;
-	font-size: 60px;
-	line-height: 80px;
-	text-transform: capitalize;
-	}
-
-
-.section__title {
-	font-size: 32px;
-	line-height: 48px;
-}
-
-@media (max-width: 765px) {
-	.section__title {
-		font-size: 24px;
-		line-height: 32px;
-	}
-}
-
-.section__subtitle {
-	padding: 40px 0px 24px 0px;
-	font-size: 24px;
-	line-height: 36px;
-}
-
-@media (max-width: 765px) {
-	.section__subtitle {
-		font-size: 18px;
-	}
-}
-
-table, th, td, tr {
-	margin-bottom: 20px;
-	padding: 5px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: $fontColor;
-	border-collapse: collapse;
-}
-
-.btn__posts {
-	background: #333;
-}
-
-.btn__albums {
-	background: #575;
-}
-
-.request__btn {
-	margin: 40px 0px 0px 30px;
-	padding: 8px 73px;
-	background: $btnConfirmBg;
-	color: $fontColor;
-	border-radius: 4px;
-	font-size: 14px;
-	line-height: 22px;	
-}
-
-.request__btn:hover {
-	background: $btnCancelBg;
-}
-
-.form-check {
-	padding-top: 10px;
-	color: #000;
-	font-size: 12px;
-}
-
-.calculator {
-	background: $calculatorBg;
+	border: 0px;
+ }
+ 
+ .calc_input {
+	background-color: transparent;
+	text-align: end;
+	width: 100%;
+	color: #d2d2d2;
+	border: 0px;
+	font-size: 4rem;
+ }
+ 
+ #calculator {
+	border: 2px solid #ededed;
 	border-radius: 50px;
-	color: $calculatorFont;
-	height: 1218px;
-	padding: 20px;
-	position: relative;
-	width: 563px;
-}
-
-.section {
-	padding-top: 40px;
+	width: 100%;
+	max-width: 280px;
+	background-color: #000000;
+	padding: 2rem 1rem;
+ }
+ 
+ .calc_screen {
+	margin-top: 90px;
+	padding: 12px;
+ }
+ 
+ .calc_keyboard > * + * {
+	margin-top: 1rem;
+ }
+ 
+ .calc_keyboard > *:last-child {
+	gap: 1rem;
+ }
+ 
+ .btn_group {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: center;
-}
-
-.screen {
-	font-size: 130px;
-	font-weight: 300;
-	height: 158px;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	text-align: right;
-}
-
-.calculator-top {
-	height: 250px;
-	padding: 0 20px;
-}
-
-.keyboard {
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-}
-
-.btn {
+	gap: 0.3rem;
+ }
+ 
+ .btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: $btnBg;
-	color: $calculatorFont;
 	border-radius: 50%;
-	cursor: pointer;
-	font-size: 45px;
-	width: 110px;
-	height: 110px;
-}
-
-.special {
-	background: $btnGray;
-	color: $calculatorBg;
-}
-
-.operation {
-	background: $btnOrange;
-	font-weight: 600;
-}
-
-.zero {
-	display: block;
-	width: 243px;
-	border-radius: 60px;
-	grid-column: 1/3;
-	padding-right: 123px;
-}
-
-
-// .section {
-// 	padding-top: 40px;
-//   	display: flex;
-//   	align-items: center;
-//   	justify-content: center;
-// }
-
-// .calculator__wrapper {
-// 	width: 400px;
-// }
-
-// .calculator {
-// 	background: $calculatorBg;
-// 	border-radius: 50px;
-// 	color: $calculatorFont;
-// 	height: 1218px;
-// 	padding: 20px;
-// 	position: relative;
-// 	width: 563px;
-// }
-
-// .calculator-header {
-// 	height: 250px;
-// 	padding: 0 20px;
-// }
-
-// .value {
-// 	font-size: 130px;
-// 	font-weight: 300;
-// 	height: 158px;
-// 	margin-bottom: 20px;
-// 	margin-right: 20px;
-// 	text-align: right;
-// }
+	width: 60px;
+	height: 60px;
+	color: #ffffff;
+	font-size: 20px;
+	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+ }
+ 
+ .btn.btn-grow {
+	flex-grow: 1;
+	border-radius: 40px;
+ }
+ 
+ .btn:hover {
+	transform: translate(-2px, -3px);
+ }
+ 
+ .btn.active {
+	background-color: #ffffff;
+	color: #f69906;
+ }
+ 
+ .btn-grey {
+	background-color: #9f9f9f;
+	color: #000;
+ }
+ 
+ .btn-grey:hover {
+	background-color: #ededed;
+ }
+ 
+ .btn-dark-grey {
+	background-color: #313131;
+ }
+ 
+ .btn-dark-grey:hover {
+	background-color: #999999;
+ }
+ 
+ .btn-orange {
+	background-color: #f69906;
+ }
+ 
+ .btn-orange:hover {
+	background-color: orange;
+ }
 
