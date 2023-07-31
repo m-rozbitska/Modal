@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let equation = [];
   operator_btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-
-      e.currentTarget.classList.add("active");
+      
+    e.currentTarget.classList.add("active");
 
       switch (e.target.value) {
         case "%":
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         case "=":
           equation.push(screen.value);
           screen.value = eval(equation.join(""));
+          screen.value = Number(screen.value).toFixed(1);
           equation = [];
           break;
         default:
