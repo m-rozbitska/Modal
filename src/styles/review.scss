@@ -1,9 +1,8 @@
 body {
-	background-color: #333333;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 16px;
+	background: $bgBody;
+	font-size: 14px;
+	line-height: 22px;
+	color: $fontColor;
  }
  
  body,
@@ -16,6 +15,23 @@ body {
 	cursor: pointer;
 	border: 0px;
  }
+
+ .header {
+	padding: 48px 0px;
+	background: $headerBg;
+}
+
+.header__logo {
+	cursor: pointer;
+}
+
+.header__title {
+	padding-top: 40px;
+	font-size: 60px;
+	line-height: 80px;
+	text-transform: capitalize;
+	}
+
  
  .calc_input {
 	background-color: transparent;
