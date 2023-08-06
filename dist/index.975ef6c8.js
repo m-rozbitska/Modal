@@ -557,12 +557,16 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"8lqZg":[function(require,module,exports) {
-const stringChecker = function(s, p1, p2) {
-    const result = (first, second)=>first + second === s.length || p1[first] === s[first + second] && result(first + 1, second) || p2[second] === s[first + second] && result(first, second + 1);
-    return s.length === p1.length + p2.length && result(0, 0);
-};
-console.log(stringChecker("radency", "rdnc", "aey"));
-console.log(stringChecker("radency", "rdnd", "aey"));
+function towerOfHanoi(numberOfDesk, fromCore, toCore, usingCore) {
+    if (numberOfDesk === 1) {
+        console.log(`Move disk 1 from ${fromCore} to ${toCore}`);
+        return;
+    }
+    towerOfHanoi(numberOfDesk - 1, fromCore, usingCore, toCore);
+    console.log(`Move disk ${numberOfDesk} from ${fromCore} to ${toCore}`);
+    towerOfHanoi(numberOfDesk - 1, usingCore, toCore, fromCore);
+}
+towerOfHanoi(3, "a", "c", "b");
 
 },{}]},["cCBoz","8lqZg"], "8lqZg", "parcelRequire94c2")
 
