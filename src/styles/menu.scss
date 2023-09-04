@@ -1,0 +1,97 @@
+.header {
+	padding: 10px 0px;
+	background-color: $headerBg;
+}
+
+.header__inner {
+	display: flex;
+	gap: 25px;
+}
+
+
+.header__input {  
+	width: 746px;
+	height: 40px;
+	background-color: $headerBg;
+	border-color: $borderInput;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.search {
+	position: relative;
+	background-color: $headerBg;
+	top: 5px;
+	right: 35px;
+}
+
+.modal-body {
+	background: $btnConfirmBg;
+}
+
+.header__logo {
+	cursor: pointer;
+}
+
+.header__logo-img {
+	max-height: 50px;
+	max-width: 45px;
+}
+
+.menu__icon {
+	display: block;
+	width: 30px;
+	height: 18px;
+	position: relative;
+	z-index: 5;
+	cursor: pointer;
+		span {
+			position: absolute;
+			transform: translateY(-50%);
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: $specialActive;
+			&:first-child {
+				top: 0;
+				transform: translateY(0);
+			}
+			&:last-child {
+				bottom: 0;
+				top: auto;
+				transform: translateY(0);
+			}
+		}
+	}
+
+.header__menu {
+	width: 100vh;
+	position: fixed;
+}
+
+.header__nav-link {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	text-transform: uppercase;
+	color: $specialActive;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.header__menu-text {
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 800;
+	color: #0d0;
+	text-transform: uppercase;
+	margin: 12px 0;
+}
+
+.nav__list-item {
+	vertical-align: baseline;
+}
