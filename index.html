@@ -7,14 +7,14 @@
     <title>Retromagaz</title>
     <link rel="stylesheet" href="./src/styles/styles.scss" />
   </head>
-  <body>
+  <body id="body">
     <header id="header" class="header">
       <div class="container">
         <div class="header__body">
         <a href="#" class="header__logo">
           <img class="logo__img" src="./src/images/logoRetromagaz.svg" alt="Retromagaz">
         </a>
-        <div class="menu__icon">
+        <div data-modal-target="menuIcon" class="menu__icon" id="menuIcon">
           <span></span>
           <span></span>
           <span></span>
@@ -40,12 +40,14 @@
         </div>
       </div>
 
-        <div class="header__menu">
+        <div class="header__menu" id="headerMenu">
           <nav class="menu__body">
             <ul class="menu__list">
               <div class="list__header">
                 <a href="#" class="list__header-title">Retromagaz</a>
-                <button class="close">&times;</button>
+                <button class="close__btn">
+                    &times;
+                </button>
               </div>
               <div class="list__goods">
                 <li class="goods__item"><a href="" class="goods__link">Playstation</a></li>
@@ -135,6 +137,7 @@
           </nav> 
         </div>
       </div>  
+      <div id="overlay"></div>
     </header>
     <script type = "module" src="/src/index.js"></script>
   </body>
