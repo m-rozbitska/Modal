@@ -97,10 +97,6 @@ button {
   padding: 48px 0;
 }
 
-.header__logo {
-  cursor: pointer;
-}
-
 .header__title {
   text-transform: capitalize;
   padding-top: 40px;
@@ -224,8 +220,25 @@ button {
 }
 
 .header {
+  width: 100%;
+  z-index: 5;
   background-color: #131730;
   padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.list__header {
+  width: 100%;
+  background-color: #212648;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.list__header-title {
+  color: #5be45b;
 }
 
 .header__inner {
@@ -253,12 +266,14 @@ button {
 }
 
 .header__logo {
-  cursor: pointer;
-}
-
-.header__logo-img {
   max-height: 50px;
   max-width: 45px;
+  cursor: pointer;
+  display: block;
+}
+
+.logo__img {
+  display: block;
 }
 
 .menu__icon {
@@ -291,20 +306,45 @@ button {
   transform: translateY(0);
 }
 
-.header__menu {
-  width: 100vh;
-  position: fixed;
+.header__body {
+  align-items: center;
+  display: flex;
 }
 
-.header__nav-link {
+.header__menu {
+  height: 100vh;
+  width: 579px;
+  position: fixed;
+  top: -15px;
+  left: 60%;
+  overflow-y: scroll;
+}
+
+.menu__body {
+  background-color: #0e0d4a;
+  padding: 0 24px 35px;
+}
+
+a {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
   align-items: center;
   margin-top: 20px;
+  padding-bottom: 20px;
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;
+  display: flex;
+}
+
+.solid {
+  max-width: 382px;
+  border-top: 1px solid #323963;
+}
+
+.media__block {
+  gap: 30px;
   display: flex;
 }
 
@@ -319,6 +359,70 @@ button {
 
 .nav__list-item {
   vertical-align: baseline;
+}
+
+.media__title {
+  text-transform: uppercase;
+  color: #c4c4c4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.media__info {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.active {
+  color: #5be45b;
+}
+
+.list__language {
+  gap: 10px;
+  display: flex;
+}
+
+.header__searchform {
+  margin-left: 20px;
+}
+
+.header__leftside {
+  align-items: center;
+  gap: 30px;
+  display: flex;
+}
+
+.header__searchform {
+  color: #fff;
+  width: 746px;
+  height: 40px;
+  border: 2px solid #323963;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+.searchform__link {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.searchform__input {
+  background-color: #131730;
+  font-size: 16px;
+}
+
+.searchform__icon {
+  background-color: #131730;
+}
+
+.close {
+  color: #fff;
+  background-color: #212648;
+  font-size: 35px;
+  font-weight: 200;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */

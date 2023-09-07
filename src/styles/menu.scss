@@ -1,6 +1,23 @@
 .header {
 	padding: 10px 0px;
 	background-color: $headerBg;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+
+.list__header {
+	background-color: $listHeaderBg;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list__header-title {
+	color: $active;
 }
 
 .header__inner {
@@ -31,12 +48,14 @@
 }
 
 .header__logo {
-	cursor: pointer;
-}
-
-.header__logo-img {
 	max-height: 50px;
 	max-width: 45px;
+	cursor: pointer;
+	display: block;
+}
+
+.logo__img {
+	display: block;
 }
 
 .menu__icon {
@@ -66,12 +85,31 @@
 		}
 	}
 
-.header__menu {
-	width: 100vh;
-	position: fixed;
+
+.header__body {
+	display: flex;
+	align-items: center;
 }
 
-.header__nav-link {
+.header__menu {
+	height: 100vh;
+	width: 579px;
+	position: fixed;
+	top: -15px;
+	left: 60%;
+	// z-index: 10;
+	// vertical-align: baseline;
+	// display: none;
+	overflow-y: scroll;
+}
+
+.menu__body {
+	background-color: $menuBg;
+	padding: 0px 24px 35px;
+}
+
+a {
+	padding-bottom: 20px;
 	display: flex;
 	align-items: center;
 	font-weight: 600;
@@ -81,6 +119,16 @@
 	color: $specialActive;
 	margin-top: 20px;
 	cursor: pointer;
+}
+
+.solid {
+	border-top: 1px solid $dividerBg;
+	max-width: 382px;
+}
+
+.media__block {
+	display: flex;
+	gap: 30px;
 }
 
 .header__menu-text {
@@ -95,3 +143,77 @@
 .nav__list-item {
 	vertical-align: baseline;
 }
+
+// .menu__body {
+// 	// position: fixed;
+// 	// top: 0;
+// 	// right: 0;
+// 	height: 100vh;
+// 	z-index: 5;
+// }
+
+.media__title {
+	font-weight: 600;
+   font-size: 12px;
+   line-height: 15px;
+   text-transform: uppercase;
+	color: $menuTitle;
+}
+
+.media__info {
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: $specialActive;
+}
+
+.active {
+	color: $active;
+}
+
+.list__language {
+	display: flex;
+	gap: 10px;
+}
+
+.header__searchform {
+	margin-left: 20px;
+}
+
+.header__leftside {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+.header__searchform {
+	color: $specialActive;
+	width: 746px;
+	height: 40px;
+	border-width: 2px;
+	border-color: $dividerBg;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 8px 10px 8px 10px;
+}
+
+.searchform__link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.searchform__input {
+	background-color: $headerBg;
+	font-size: 16px;
+}
+
+.searchform__icon {
+	background-color: $headerBg;
+}
+
+.close {
+	font-size: 35px;
+	font-weight: 200;
+	color: $specialActive;
+	background-color: $listHeaderBg;
+}
+
