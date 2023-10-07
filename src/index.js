@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         case "=":
           equation.push(screen.value);
           screen.value = eval(equation.join(""));
-          screen.value = Number(screen.value).toFixed(1);
           equation = [];
           break;
         default:
