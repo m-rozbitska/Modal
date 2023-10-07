@@ -179,7 +179,7 @@ button {
 
 @font-face {
   font-family: Helvetica Neue;
-  src: url("./HelveticaNeue.ba8ba146.woff2") format("woff2"), url("./HelveticaNeue.ba8ba146.woff2") format("woff");
+  src: url("HelveticaNeue.ba8ba146.4ea88469.woff2") format("woff2"), url("HelveticaNeue.ba8ba146.4ea88469.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -189,4 +189,4 @@ button {
   background: #907ff0;
 }
 
-/*# sourceMappingURL=index.867122b9.css.map */
+/*# sourceMappingURL=index.fad1ef1e.css.map */
